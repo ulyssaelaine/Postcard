@@ -37,7 +37,7 @@
         <!--View Controller-->
         <scene sceneID="R2X-NL-BvT">
             <objects>
-                <viewController id="fwa-Eb-pNJ" sceneMemberID="viewController">
+                <viewController id="fwa-Eb-pNJ" customClass="ViewController" customModule="Postcard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kzo-Gu-MSP"/>
                         <viewControllerLayoutGuide type="bottom" id="Ely-vA-eiB"/>
@@ -46,13 +46,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fu2-GG-duG">
+                                <rect key="frame" x="24" y="90" width="280" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paris_postcard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="N0g-NA-RAu">
-                                <rect key="frame" x="184" y="115" width="130" height="90"/>
+                                <rect key="frame" x="174" y="156" width="130" height="90"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="41a-Z6-lNg">
+                                <rect key="frame" x="16" y="269" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Izj-3j-Cgp">
+                                <rect key="frame" x="16" y="320" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfi-Tx-yki">
+                                <rect key="frame" x="16" y="210" width="150" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.62723782897213709" blue="0.078273126248503799" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Send Mail">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMailButtonPressed:" destination="fwa-Eb-pNJ" eventType="touchUpInside" id="l0Q-mh-qbj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="iSd-rH-coR"/>
+                    <connections>
+                        <outlet property="enterMessageTextField" destination="Izj-3j-Cgp" id="E2S-eF-QOT"/>
+                        <outlet property="enterNameTextField" destination="41a-Z6-lNg" id="W4L-Wb-DMw"/>
+                        <outlet property="mailButton" destination="mfi-Tx-yki" id="Fet-t5-aG6"/>
+                        <outlet property="messageLabel" destination="Fu2-GG-duG" id="Q8X-WA-A03"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INm-Z8-06a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
